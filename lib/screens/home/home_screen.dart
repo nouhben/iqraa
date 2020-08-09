@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqraa/constants.dart';
-
 import 'package:iqraa/models/book.dart';
-
+import 'package:iqraa/screens/home/components/book_rating.dart';
 import 'package:iqraa/screens/home/components/reading_list_card.dart';
 import 'package:iqraa/size_config.dart';
 
@@ -80,9 +79,10 @@ class HomeScreen extends StatelessWidget {
                         Positioned(
                           left: 0,
                           bottom: 0,
+                          right: 0,
                           child: Container(
                             height: 185,
-                            width: double.infinity,
+                            //width: double.infinity,
                             decoration: BoxDecoration(
                               color: Color(0xffeaeaea).withOpacity(0.45),
                               //
@@ -94,10 +94,35 @@ class HomeScreen extends StatelessWidget {
                               right: SizeConfig.screenWidth * 0.35,
                             ),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   'New yourk Time best 11th may 2020',
-                                  style: TextStyle(color: kBlackColor),
+                                  style: TextStyle(color: kBlackColor, fontSize: 9.0),
+                                ),
+                                SizedBox(height: 5.0),
+                                Text(
+                                  'How to win\nFriends & Influence',
+                                  style: Theme.of(context).textTheme.headline6,
+                                ),
+                                Text(
+                                  'Gary Vaynerchuk',
+                                  style: TextStyle(color: kLightBlackColor),
+                                ),
+                                SizedBox(height: 10.0),
+                                Row(
+                                  children: [
+                                    BookRating(score: 4.9),
+                                    SizedBox(width: 10.0),
+                                    Expanded(
+                                      child: Text(
+                                        'When earth was flat and everyone wanted to win the game of the best and people... .',
+                                        maxLines: 3,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(fontSize: 10.0, color: kLightBlackColor),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
