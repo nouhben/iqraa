@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iqraa/components/tow_side_round_button.dart';
 import 'package:iqraa/constants.dart';
 import 'package:iqraa/screens/home/components/book_rating.dart';
 import 'package:iqraa/size_config.dart';
@@ -110,11 +111,14 @@ class HomeScreen extends StatelessWidget {
                           Spacer(),
                           Row(
                             children: [
-                              Container(
-                                width: 101,
-                                padding: EdgeInsets.symmetric(vertical: 10),
-                                alignment: Alignment.center,
-                                child: Text('Details'),
+                              InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  width: 101,
+                                  padding: EdgeInsets.symmetric(vertical: 10),
+                                  alignment: Alignment.center,
+                                  child: Text('Details'),
+                                ),
                               ),
                               Expanded(
                                 child: TowSideRoundButton(
