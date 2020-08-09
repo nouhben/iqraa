@@ -59,7 +59,7 @@ class BestOfDayCard extends StatelessWidget {
                   SizedBox(height: 10.0),
                   Row(
                     children: [
-                      BookRating(score: 4.9),
+                      BookRating(score: book.ratingScore),
                       SizedBox(width: 10.0),
                       Expanded(
                         child: Text(

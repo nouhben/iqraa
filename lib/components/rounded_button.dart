@@ -4,10 +4,15 @@ import 'package:iqraa/size_config.dart';
 class RoundedButton extends StatelessWidget {
   final String label;
   final Function onPress;
+  final double verticalPadding, horizontalPadding, verticalMargin, horizontalMargin;
   const RoundedButton({
     this.label,
     this.onPress,
     Key key,
+    this.verticalPadding,
+    this.horizontalPadding,
+    this.verticalMargin,
+    this.horizontalMargin,
   }) : super(key: key);
 
   @override
@@ -16,11 +21,12 @@ class RoundedButton extends StatelessWidget {
       onTap: this.onPress,
       child: Container(
         margin: EdgeInsets.symmetric(
-          vertical: SizeConfig.defaultSize * 1.6, //16
+          vertical: this.verticalMargin ?? SizeConfig.defaultSize * 1.6,
+          horizontal: this.horizontalMargin ?? 0.0, //16
         ),
         padding: EdgeInsets.symmetric(
-          vertical: SizeConfig.defaultSize * 1.6,
-          horizontal: SizeConfig.defaultSize * 3, //30 //16
+          vertical: this.verticalPadding ?? SizeConfig.defaultSize * 1.6,
+          horizontal: this.horizontalPadding ?? SizeConfig.defaultSize * 3, //30 //16
         ),
         decoration: BoxDecoration(
           color: Colors.white,
