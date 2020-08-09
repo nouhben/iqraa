@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iqraa/constants.dart';
 import 'package:iqraa/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,6 +36,34 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: SizeConfig.defaultSize * 3),
+            Container(
+              height: SizeConfig.defaultSize * 24.5, //245
+              width: SizeConfig.defaultSize * 20.2,
+              child: Stack(
+                children: [
+                  Container(
+                    height: SizeConfig.defaultSize * 22.1,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.circular(SizeConfig.defaultSize * 3),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 18),
+                          blurRadius: 43,
+                          //spreadRadius: -12.0,
+                          color: kShadowColor,
+                        ),
+                      ],
+                    ), //221
+                  ),
+                  Image.asset(
+                    'images/book-1.png',
+                    width: SizeConfig.defaultSize * 15,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
