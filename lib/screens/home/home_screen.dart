@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iqraa/constants.dart';
+import 'package:iqraa/screens/home/components/book_rating.dart';
 import 'package:iqraa/size_config.dart';
 
 class HomeScreen extends StatelessWidget {

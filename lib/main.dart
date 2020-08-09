@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqraa/components/rounded_button.dart';
 import 'package:iqraa/constants.dart';
-import 'package:iqraa/screens/home_screen.dart';
+import 'package:iqraa/screens/home/home_screen.dart';
 import 'package:iqraa/size_config.dart';
 
 void main() {
