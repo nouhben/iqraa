@@ -30,28 +30,28 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     TextSpan(text: 'What are you \nreading'),
                     TextSpan(
-                        text: ' today?',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                      text: ' today?',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: SizeConfig.defaultSize * 3),
+            SizedBox(height: 30.0),
             Container(
-              height: SizeConfig.defaultSize * 24.5, //245
-              width: SizeConfig.defaultSize * 20.2,
+              height: 245, //SizeConfig.defaultSize * 28.5, //245
+              width: 202, //SizeConfig.defaultSize * 20.2,
               child: Stack(
                 children: [
                   Positioned(
-                    top: 0,
                     right: 0,
                     left: 0,
+                    bottom: 0,
                     child: Container(
-                      height: SizeConfig.defaultSize * 22.1,
+                      height: 221, //SizeConfig.defaultSize * 22.1,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius:
-                            BorderRadius.circular(SizeConfig.defaultSize * 3),
+                        borderRadius: BorderRadius.circular(30.0),
                         boxShadow: [
                           BoxShadow(
                             offset: Offset(0, 18),
@@ -63,10 +63,7 @@ class HomeScreen extends StatelessWidget {
                       ), //221
                     ),
                   ),
-                  Image.asset(
-                    'images/book-1.png',
-                    width: SizeConfig.defaultSize * 15,
-                  ),
+                  Image.asset('images/book-1.png', width: 150),
                   Positioned(
                     top: 35,
                     right: 10,
@@ -80,10 +77,93 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Positioned(
+                    top: 160,
+                    child: Container(
+                      height: 85.0,
+                      width: 202,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 24),
+                            child: RichText(
+                              text: TextSpan(
+                                style: TextStyle(color: kBlackColor),
+                                children: [
+                                  TextSpan(
+                                    text: 'Crushing & Influence\n',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: 'Gary Vanyshuck',
+                                    style: TextStyle(
+                                      color: kLightBlackColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Spacer(),
+                          Row(
+                            children: [
+                              Container(
+                                width: 101,
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                alignment: Alignment.center,
+                                child: Text('Details'),
+                              ),
+                              Expanded(
+                                child: TowSideRoundButton(
+                                  text: 'Read',
+                                  onPress: () {},
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class TowSideRoundButton extends StatelessWidget {
+  final String text;
+  final Function onPress;
+  const TowSideRoundButton({
+    Key key,
+    this.text,
+    this.onPress,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: this.onPress,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(29.0),
+            bottomLeft: Radius.circular(29.0),
+          ),
+        ),
+        child: Text(
+          this.text ?? '',
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
