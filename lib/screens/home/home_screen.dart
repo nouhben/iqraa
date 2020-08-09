@@ -40,7 +40,17 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30.0),
-            ReadingListCard(book: books[0]),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ReadingListCard(book: books[0]),
+                  ReadingListCard(book: books[1]),
+                  ReadingListCard(book: books[2]),
+                  SizedBox(width: 30.0),
+                ],
+              ),
+            ),
           ],
         ),
       ),
