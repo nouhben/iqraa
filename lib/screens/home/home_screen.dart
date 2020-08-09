@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqraa/constants.dart';
 import 'package:iqraa/models/book.dart';
+import 'package:iqraa/screens/details/details_screen.dart';
 import 'package:iqraa/screens/home/components/best_of_day_card.dart';
 import 'package:iqraa/screens/home/components/continue_reading_round_card.dart';
 import 'package:iqraa/screens/home/components/reading_list_card.dart';
@@ -50,7 +51,17 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        ReadingListCard(book: books[0]),
+                        ReadingListCard(
+                          book: books[0],
+                          pressDetails: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetailsScreen(book: books[0]),
+                              ),
+                            );
+                          },
+                        ),
                         ReadingListCard(book: books[1]),
                         ReadingListCard(book: books[2]),
                         SizedBox(width: 30.0),
