@@ -97,7 +97,7 @@ class ReadingListCard extends StatelessWidget {
                   icon: Icon(Icons.favorite_border),
                   onPressed: () {},
                 ),
-                BookRating(score: 4.9),
+                BookRating(score: book.ratingScrore),
               ],
             ),
           ),
