@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqraa/components/rounded_button.dart';
 import 'package:iqraa/constants.dart';
+import 'package:iqraa/screens/home_screen.dart';
 import 'package:iqraa/size_config.dart';
 
 void main() {
@@ -61,7 +62,17 @@ class WelcomeScreen extends StatelessWidget {
                 label: 'Start reading',
                 onPress: () {
                   //TODO: save to local tha the welcom screen is done
-                  //TODO: push the login screen
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => HomeScreen(),
+                  //   ),
+                  // );
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
                   print('pressed');
                 },
               ),
