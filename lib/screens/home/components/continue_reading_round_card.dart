@@ -55,7 +55,7 @@ class ContinueReadingRoundCard extends StatelessWidget {
                           Align(
                             alignment: Alignment.bottomRight,
                             child: Text(
-                              'Chapter ${currentChapter ?? 1} of ${book.chapters}',
+                              'Chapter ${currentChapter ?? 1} of ${book.numberOfChapters}',
                               style: TextStyle(color: kLightBlackColor, fontSize: 10),
                             ),
                           ),
@@ -71,7 +71,7 @@ class ContinueReadingRoundCard extends StatelessWidget {
             Container(
               //TODO:make sure the current chapter does not exceeds the numb of chapters
               //number of chapter is 100% ==>
-              width: SizeConfig.screenWidth * (currentChapter / book.chapters) - SizeConfig.defaultSize,
+              width: SizeConfig.screenWidth * (currentChapter / book.numberOfChapters) - SizeConfig.defaultSize,
               height: 7.0,
               decoration: BoxDecoration(
                 color: kProgressIndicator,
